@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">  <!-- Подключение внешнего стиля через файл style.css -->
+    </head>
+    <body>
+        
+        <a href="{{url_for('contacts')}}">Контакты</a>
+        <a href="{{url_for('index')}}">Главная страница</a>
+        
+        <table class="table">  
+            <caption class="subtitle">Таблица User'ов</caption>
+            <thead class="thead">  
+                <tr>
+                    <th>Id</th>
+                    <th>name</th>
+                    <th>gender</th>
+                    <th>age</th>
+                    <th>country</th>
+                    <th>sport</th>
+                    <th>active</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <th>{{user.id}}</th>
+                    <th align="left">{{user.name}}</th>
+                    <th>{{user.gender}}</th>
+                    <th>{{user.age}}</th>
+                    <th align="left">{{user.country}}</th>
+                    <th align="left">{{user.sport}}</th>
+                    <th>{{user.active}}</th>
+                </tr>
+        {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
